@@ -1881,3 +1881,340 @@ button {
         display: flex;
     }
 }
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLETS */
+@media (max-width: 950px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 25px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: 320px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-image {
+        min-height: 400px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+
+/* SMALL TABLETS / LARGE PHONES */
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 45px 30px;
+    }
+}
+
+
+/* MOBILE PHONES */
+@media (max-width: 650px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        min-height: 70px;
+        padding: 0 18px;
+    }
+
+    /* Mobile navigation */
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: var(--cream);
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 20px;
+
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 25px rgba(60, 40, 20, 0.08);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--dark);
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 330px;
+        min-height: 360px;
+    }
+
+    /* Features */
+
+    .feature {
+        padding: 25px 20px;
+    }
+
+    /* About */
+
+    .about-image {
+        min-height: 300px;
+    }
+
+    .about-image::before {
+        width: 160px;
+        height: 160px;
+        font-size: 70px;
+    }
+
+    .about-badge {
+        right: 10px;
+        bottom: 15px;
+        padding: 14px 18px;
+    }
+
+    /* Headings */
+
+    .about h2,
+    .section-heading h2,
+    .contact h2 {
+        font-size: 36px;
+    }
+
+    /* Menu */
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-image {
+        height: 230px;
+    }
+
+    .menu-title {
+        align-items: flex-start;
+    }
+
+    .menu-title h3 {
+        font-size: 19px;
+    }
+
+    /* Services */
+
+    .service-card {
+        padding: 28px;
+    }
+
+    /* CTA */
+
+    .cta {
+        margin: 20px 20px 70px;
+        padding: 40px 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+    /* Contact */
+
+    .contact-card {
+        padding: 28px;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 55px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+
+/* VERY SMALL PHONES */
+@media (max-width: 400px) {
+
+    .logo strong {
+        font-size: 18px;
+    }
+
+    .logo small {
+        font-size: 7px;
+    }
+
+    .logo > span {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-card {
+        min-height: 330px;
+    }
+
+    .breakfast-icon {
+        width: 130px;
+        height: 130px;
+        font-size: 60px;
+    }
+
+    .section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .cta {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
