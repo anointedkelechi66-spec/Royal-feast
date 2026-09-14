@@ -147,3 +147,113 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     });
 
 });
+// =========================
+// MOBILE NAVIGATION
+// =========================
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("show");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("show");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        });
+    });
+}
+
+
+// =========================
+// MENU FILTER
+// =========================
+
+const filterButtons =
+    document.querySelectorAll(".filter-button");
+
+const menuCards =
+    document.querySelectorAll(".menu-card");
+
+filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const selectedCategory =
+            button.dataset.category;
+
+        menuCards.forEach((card) => {
+
+            const cardCategory =
+                card.dataset.category;
+
+            if (
+                selectedCategory === "all" ||
+                selectedCategory === cardCategory
+            ) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+
+
+// =========================
+// CURRENT YEAR
+// =========================
+
+const footerYear =
+    document.querySelector(".footer-bottom p");
+
+if (footerYear) {
+    footerYear.textContent =
+        `© ${new Date().getFullYear()} Royal Feast. All rights reserved.`;
+}
+
+
+// =========================
+// NAV MENU MESSAGE
+// =========================
+
+const menuButton =
+    document.querySelector(".nav-button");
+
+if (menuButton) {
+    menuButton.addEventListener("click", () => {
+        console.log(
+            "Welcome to the Royal Feast menu!"
+        );
+    });
+}
